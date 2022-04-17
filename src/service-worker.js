@@ -5,6 +5,7 @@ import {
   NetworkFirst,
 } from 'workbox-strategies';
 import { precacheAndRoute, createHandlerBoundToURL } from 'workbox-precaching';
+import { ExpirationPlugin } from 'workbox-expiration';
 
 precacheAndRoute(self.__WB_MANIFEST);
 
@@ -12,15 +13,24 @@ const handler = createHandlerBoundToURL('/index.html');
 const navigationRoute = new NavigationRoute(handler);
 
 // Handle API:
-registerRoute(new RegExp(/^https?.*/), new NetworkFirst());
+registerRoute(
+  new RegExp(/^https?:\/\/www.themealdb.com\/api\/.*/),
+  new StaleWhileRevalidate()
+);
 
-// // FontsRoute
-// const FontsRoute = new Route(
-//   new RegExp(/^https:\/\/fonts.(?:googleapis|gstatic).com\/(.*)/),
-//   new StaleWhileRevalidate({
-//     cacheName: 'google-fonts-cache',
-//   })
-// );
+// Handle fonts
+const FontsRoute = new Route(
+  new RegExp(/^https:\/\/fonts.(?:googleapis|gstatic).com\/(.*)/),
+  new StaleWhileRevalidate({
+    cacheName: 'google-fonts-cache',
+    plugins: [
+      new ExpirationPlugin({
+        // expires in 30 days
+        maxAgeSeconds: 30 * 24 * 60 * 60,
+      }),
+    ],
+  })
+);
 
 // Handle images:
 const imageRoute = new Route(
