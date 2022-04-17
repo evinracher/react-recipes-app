@@ -1,5 +1,4 @@
 {
-  "ignorePatterns": ["dist"],
   "env": {
     "browser": true,
     "es2021": true
@@ -16,13 +15,6 @@
     "ecmaVersion": "latest",
     "sourceType": "module"
   },
-  "plugins": ["react", "prettier"],
-  "rules": {
-    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
-    "import/prefer-default-export": "off",
-    "react/prop-types": "off",
-    "react/function-component-definition": "off",
-    "no-confusing-arrow": "off",
-    "prettier/prettier": "error"
-  }
+  "plugins": ["react"],
+  "rules": {}
 }

@@ -3,24 +3,45 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "isomorphic-fetch": "^3.0.0",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
     "react-helmet": "^5.2.0",
     "react-router-dom": "^4.3.1",
-    "react-scripts": "1.1.4",
-    "serve": "^9.1.0"
+    "react-scripts": "^5.0.1",
+    "serve": "^13.0.2",
+    "workbox-precaching": "^6.5.3",
+    "workbox-routing": "^6.5.3",
+    "workbox-strategies": "^6.5.3"
   },
   "scripts": {
     "dev": "react-scripts start",
     "start": "serve ./build -s -p ${PORT:-4000}",
-    "build": "react-scripts build",
+    "build": "DISABLE_ESLINT_PLUGIN=true react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
   "devDependencies": {
-    "eslint": "^4.10.0",
+    "eslint": "^8.13.0",
+    "eslint-config-airbnb": "^19.0.4",
     "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
     "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-react": "^7.29.4",
+    "eslint-plugin-react-hooks": "^4.4.0",
     "prettier": "2.6.2"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }
