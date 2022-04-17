@@ -1,18 +1,18 @@
 import { registerRoute, NavigationRoute, Route } from 'workbox-routing';
-import { CacheFirst, StaleWhileRevalidate } from 'workbox-strategies';
+import {
+  CacheFirst,
+  StaleWhileRevalidate,
+  NetworkFirst,
+} from 'workbox-strategies';
 import { precacheAndRoute, createHandlerBoundToURL } from 'workbox-precaching';
 
 precacheAndRoute(self.__WB_MANIFEST);
-console.log('service worker config');
 
 const handler = createHandlerBoundToURL('/index.html');
 const navigationRoute = new NavigationRoute(handler);
 
-// // Handle API:
-// const APIRoute = new Route(
-//   new RegExp(/^https?:\/\/www.themealdb.com\/api\/.*/),
-//   new StaleWhileRevalidate()
-// );
+// Handle API:
+registerRoute(new RegExp(/^https?.*/), new NetworkFirst());
 
 // // FontsRoute
 // const FontsRoute = new Route(
@@ -57,5 +57,4 @@ registerRoute(navigationRoute);
 registerRoute(imageRoute);
 registerRoute(scriptsRoute);
 registerRoute(stylesRoute);
-// registerRoute(APIRoute);
 // registerRoute(FontsRoute);
