@@ -6,6 +6,7 @@
     "isomorphic-fetch": "^3.0.0",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
+    "react-ga": "^3.3.0",
     "react-helmet": "^5.2.0",
     "react-router-dom": "^4.3.1",
     "react-scripts": "^5.0.1",
@@ -16,7 +17,7 @@
     "workbox-strategies": "^6.5.3"
   },
   "scripts": {
-    "dev": "react-scripts start",
+    "dev": "DISABLE_ESLINT_PLUGIN=true react-scripts start",
     "start": "serve ./build -s -p ${PORT:-4000}",
     "build": "DISABLE_ESLINT_PLUGIN=true react-scripts build",
     "test": "react-scripts test --env=jsdom",

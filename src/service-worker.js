@@ -6,6 +6,9 @@ import {
 } from 'workbox-strategies';
 import { precacheAndRoute, createHandlerBoundToURL } from 'workbox-precaching';
 import { ExpirationPlugin } from 'workbox-expiration';
+import * as googleAnalytics from 'workbox-google-analytics';
+
+googleAnalytics.initialize();
 
 precacheAndRoute(self.__WB_MANIFEST);
 
