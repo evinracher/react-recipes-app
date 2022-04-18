@@ -1,5 +1,24 @@
-# Curso de PWA con Recat en Platzi
+# Recipes App
 
-Este repositorio contiene todo el contenido del curso a medida que construimos una app para ver recetas con la API de MealDB.
+![App screenshots](.readme-files/recipes-app-screenshot.png)
 
-Hay un branch por clase para que puedas navegar con facilidad el curso.
+This is a PWA that use MealDB API to show different recipes with instructions.
+
+## Features:
+
+- Offline support with workbox
+- Network strategies
+- Add to home screen
+- Web share API
+
+- Create with [Create React App](https://github.com/facebook/create-react-app).
+
+## Scripts
+
+- `npm install` to install dependencies
+- `npm run dev` dev env
+- `npm run build && npm start` prod env
+
+## License
+
+MIT
