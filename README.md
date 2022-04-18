@@ -1,5 +1,6 @@
 # Recipes App
 
+Deployed in: https://recipes-app-three.vercel.app/
 ![App screenshots](.readme-files/recipes-app-screenshot.png)
 
 This is a PWA that use MealDB API to show different recipes with instructions.
