@@ -23,3 +23,5 @@ This is a PWA that use MealDB API to show different recipes with instructions.
 ## License
 
 MIT
+
+Made during this [course](https://platzi.com/cursos/pwa-react-js/)
